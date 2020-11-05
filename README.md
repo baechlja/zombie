@@ -32,7 +32,7 @@ Deshalb benötigen wir dafür 2 Listen, eine für die Einzahl und eine für die 
 Dafür benötigen wir nun die Anweisung re. 
   
 ```for word in plural_nouns:
-        text = re.sub(r'\b{0}\b'.format(word), "zombies", text)```
+    text = re.sub(r'\b{0}\b'.format(word), "zombies", text)```
         
 ```for word in singular_nouns:
         text= re.sub(r'\b{0}\b'.format(word), "zombie", text)```
