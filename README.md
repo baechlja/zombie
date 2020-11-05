@@ -31,11 +31,9 @@ Deshalb benötigen wir dafür 2 Listen, eine für die Einzahl und eine für die 
 
 Dafür benötigen wir nun die Anweisung re. 
   
-```for word in plural_nouns:
-    text = re.sub(r'\b{0}\b'.format(word), "zombies", text)```
+```for word in plural_nouns: text = re.sub(r'\b{0}\b'.format(word), "zombies", text)```
         
-```for word in singular_nouns:
-        text= re.sub(r'\b{0}\b'.format(word), "zombie", text)```
+```for word in singular_nouns: text= re.sub(r'\b{0}\b'.format(word), "zombie", text)```
 
 # Schritt 4:  Auch Wörter mit großem Anfangsbuchstaben ersetzten
 
@@ -54,8 +52,7 @@ Die zweite Liste beinhaltet alle Wörter die eingesetzt werden sollen, zum Beisp
 # Schritt 7: die Zombiesprache anwenden
 
  
-```for word in speaking:
-        text = re.sub(r'\b{0}\b'.format(word), choice(zombie_sounds), text)```
+```for word in speaking: text = re.sub(r'\b{0}\b'.format(word), choice(zombie_sounds), text)```
         
 # Schritt 8: Die Datei einfügen
 
@@ -69,8 +66,7 @@ Dann wird die Datei importiert:
 
 Damit am Ende eine neue Datei mit dem Namen "Zombie" erstellt wird, benötigen wir noch diesen Code am Ende:
 
-```with open("Zombie.txt", "w", encoding="utf-8") as f:
-    f.write(text)```
+```with open("Zombie.txt", "w", encoding="utf-8") as f: f.write(text)```
     
 # Schritt 9: Einzelne Buchstaben ersetzen, um die Zombiesprache darzustellen
       
