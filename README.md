@@ -15,58 +15,65 @@ In diesem Projekt "Zombie" werden wir die Gesichte von Jane Austen in eine Gesch
 Bei MacOs oder Linux: ```sudo pip3 install requests```
 Bei Windows: ```pip install requests```
 
-# Schritt 1: re importieren
+# Schritt 1:  Importieren
 
 Um Wörter oder Buchstaden zu ersetzten brauchen wir die Anweisung re.
 
 ```import re```
 
-# Schritt 2:  Listen erstellen um Zombies einzubauen
+Für zufällige Anweisungen benötigen wir choice.
+
+```from random import choice```
+
+Für das Speichern von Dateien benötigen wir requests, was wir zuvor installiert haben.
+
+```import requests```
+
+# Schritt 2: Datei holen
+
+Wir holen uns das Buch als Datei und speichern es als variable.
+
+```url = "gutenberg.txt"```
+```r = open(url,encoding= "utf8").read()```
+```text = r```
+
+# Schritt 3:  Listen erstellen um Zombies einzubauen
 
 Um die Menschen im Buch mit Zombies zu ersetzten müssen wir Listen erstellen, die die Wörter beeinhalten, die wir ersetzen möchten.
 Damit beispielsweise "man" zu "zombie" wird. Es soll aber auch die Mehrzahl, also "men" zu "zombies" ersetzt werden.
-Deshalb benötigen wir dafür 2 Listen, eine für die Einzahl und eine für die Mehrzahl
+Deshalb benötigen wir dafür 2 Listen, eine für die Einzahl und eine für die Mehrzahl.
 
-# Schritt 3: Menschen mit Zombies ersetzten
+Zum Ersetzen benutzen wir diese Codes:
 
-Dafür benötigen wir nun die Anweisung re. 
-  
 ```for word in plural_nouns: text = re.sub(r'\b{0}\b'.format(word), "zombies", text)```
-        
+
 ```for word in singular_nouns: text= re.sub(r'\b{0}\b'.format(word), "zombie", text)```
 
 # Schritt 4:  Auch Wörter mit großem Anfangsbuchstaben ersetzten
+
+Nicht nur die kleingeschriebenen wörter sollen ersetzt werden. Sonst werden die Wörter die am Satzanfang stehen nicht ersetzt. Dafür benötigen wir diese Anweisung:
 
 ```plural_nouns = plural_nouns + [word.title() for word in plural_nouns]```
 
 
 # Schritt 5: Zombiegeräusche hinzufügen mithilfe 2 weiterer Listen
 
+Da Zombies nicht sprechen, sondern eher stöhnen, muss die Sprache angepasst werden.
+
 Die erste Liste beinhaltet alle Wörter die ersetzt werden sollen, zum Beispiel "said".
 Die zweite Liste beinhaltet alle Wörter die eingesetzt werden sollen, zum Beispiel "groaned"
 
-# Schritt 6: choice von der Random Bibiliothek importieren
-
-```from random import choice```
-
-# Schritt 7: die Zombiesprache anwenden
-
+Dann verwenden wir nun das module "choice", so kann der Begriff mit einem zufälligen Zombie-Geräusch aus unserer Liste ersetzt werden.
  
 ```for word in speaking: text = re.sub(r'\b{0}\b'.format(word), choice(zombie_sounds), text)```
+
+Außerdem wollen wir noch die Sprache innerhalb der " " verändern. Denn Zombies sprechen nicht so wie wir Menschen, also ersetzten wir einzelne Buchstaben, die Zombies nicht sagen würden mit anderen Buchstaben. So wird das Gesprochene für uns unverständlich, das ist realistischer! ;)
         
 # Schritt 8: Die Datei einfügen
-
-Dafür importieren wir voerst unser module "request", was wir zu Beginn installiert haben.
-Dann wird die Datei importiert:
-
-
-```url = "gutenberg.txt"```
-```r = open(url,encoding= "utf8").read()```
-```text = r```
 
 Damit am Ende eine neue Datei mit dem Namen "Zombie" erstellt wird, benötigen wir noch diesen Code am Ende:
 
 ```with open("Zombie.txt", "w", encoding="utf-8") as f: f.write(text)```
     
-# Schritt 9: Einzelne Buchstaben ersetzen, um die Zombiesprache darzustellen
+
       
