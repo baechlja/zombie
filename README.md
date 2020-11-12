@@ -69,7 +69,7 @@ Dann verwenden wir nun das module "choice", so kann der Begriff mit einem zufäl
 
 Außerdem wollen wir noch die Sprache innerhalb der " " verändern. Denn Zombies sprechen nicht so wie wir Menschen, also ersetzten wir einzelne Buchstaben, die Zombies nicht sagen würden mit anderen Buchstaben. So wird das Gesprochene für uns unverständlich, das ist realistischer! ;)
         
-# Schritt 8: Die Datei einfügen
+# Schritt 6: Die Datei einfügen
 
 Damit am Ende eine neue Datei mit dem Namen "Zombie" erstellt wird, benötigen wir noch diesen Code am Ende:
 
